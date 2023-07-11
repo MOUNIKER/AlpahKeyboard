@@ -1,6 +1,5 @@
 //
 //  KeyboardButton.swift
-//  SecNinjazKeyboard
 //
 //  Created by Siva Mouniker on 07/07/23.
 //

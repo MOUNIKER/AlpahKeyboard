@@ -1,6 +1,5 @@
 //
 //  Extensions.swift
-//  RupeSoKeyboard
 //
 //  Created by Siva Mouniker on 07/07/23.
 //
