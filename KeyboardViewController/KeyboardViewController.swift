@@ -24,8 +24,8 @@ class KeyboardViewController: UIInputViewController {
     var keyboardHeight: CGFloat = 225
     var KeyboardVCHeightConstraint: NSLayoutConstraint!
     var containerViewHeight: CGFloat = 0
-        
-
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -72,7 +72,7 @@ class KeyboardViewController: UIInputViewController {
     func setColorScheme(_ colorScheme: KBColorScheme) {
         
         let themeColor = KBColors(colorScheme: colorScheme)
-    
+        
         self.capButton.defaultBackgroundColor = themeColor.buttonBackgroundColor
         self.deleteButton.defaultBackgroundColor = themeColor.buttonBackgroundColor
         self.returnButton.defaultBackgroundColor = themeColor.buttonBackgroundColor
@@ -88,11 +88,10 @@ class KeyboardViewController: UIInputViewController {
         for button in allTextButtons {
             button.tintColor = themeColor.buttonTintColor
             button.defaultBackgroundColor = themeColor.buttonBackgroundColor
-            button.highlightBackgroundColor = themeColor.buttonHighlightColor
             button.setTitleColor(themeColor.buttonTextColor, for: .normal)
             
         }
-    
+        
     }
     
     var mainStackView: UIStackView!
@@ -122,7 +121,7 @@ class KeyboardViewController: UIInputViewController {
         mainStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -2).isActive = true
         mainStackView.heightAnchor.constraint(equalToConstant: keyboardHeight).isActive = true
         
-
+        
     }
     
     func serveiceKeys(midRow: UIView)->(UIStackView, UIStackView) {
@@ -164,7 +163,7 @@ class KeyboardViewController: UIInputViewController {
         keysView.addConstraintsWithFormatString(formate: "V:|[v0]|", views: RowStackView)
         return keysView
     }
-
+    
     // Creates Buttons on Keyboard...
     func createButtonWithTitle(title: String) -> KeyboardButton {
         
@@ -186,7 +185,7 @@ class KeyboardViewController: UIInputViewController {
         
         UIView.animate(withDuration: 0.25, animations: {
             button.transform = CGAffineTransform(scaleX: 1.20, y: 1.20)
-                    proxy.insertText(title)
+            proxy.insertText(title)
             
         }) { (_) in
             UIView.animate(withDuration: 0.10, animations: {
@@ -210,7 +209,7 @@ class KeyboardViewController: UIInputViewController {
         if let buttonImage = img {
             button.setImage(buttonImage.withRenderingMode(.alwaysOriginal), for: .normal)
         }
-       
+        
         button.sizeToFit()
         button.tag = tag
         
@@ -226,13 +225,13 @@ class KeyboardViewController: UIInputViewController {
             button.widthAnchor.constraint(equalToConstant: 45).isActive = true
             return button
         }
-
+        
         //White Space Button...
         if button.tag == 6 {
-
+            
             button.addTarget(self, action: #selector(insertWhiteSpace), for: .touchUpInside)
             button.widthAnchor.constraint(equalToConstant: 100).isActive = true
-
+            
             return button
         }
         //Handle return Button...//Usually depends on Texyfiled'd return Type...
@@ -249,6 +248,15 @@ class KeyboardViewController: UIInputViewController {
     
     @objc func handleCapitalsAndLowerCase(sender: UIButton) {
         for button in allTextButtons {
+            if isCapitalsShowing == true{
+                
+                capButton.defaultBackgroundColor = UIColor.white
+            }
+            else{
+                
+                capButton.defaultBackgroundColor = UIColor.lightGray
+                
+            }
             
             if let title = button.currentTitle {
                 button.setTitle(isCapitalsShowing ? title.lowercased() : title.uppercased(), for: .normal)
@@ -256,23 +264,23 @@ class KeyboardViewController: UIInputViewController {
         }
         isCapitalsShowing = !isCapitalsShowing
     }
-        
+    
     @objc func insertWhiteSpace() {
-
+        
         let proxy = self.textDocumentProxy
         proxy.insertText(" ")
         print("white space")
     }
     
     @objc func handleReturnKey(sender: UIButton) {
-             self.textDocumentProxy.insertText("\n")
+        self.textDocumentProxy.insertText("\n")
     }
- 
+    
     @objc func manualAction(sender: UIButton) {
         let proxy = self.textDocumentProxy
         
-            proxy.deleteBackward()
+        proxy.deleteBackward()
         print("Else Case... Remaining Keys")
     }
-
+    
 }

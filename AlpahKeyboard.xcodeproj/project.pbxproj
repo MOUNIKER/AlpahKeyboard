@@ -16,7 +16,7 @@
 		27AEB7762A5C2A3A008ED10F /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AEB7752A5C2A3A008ED10F /* KeyboardViewController.swift */; };
 		27AEB77A2A5C2A3A008ED10F /* KeyboardViewController.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 27AEB7732A5C2A3A008ED10F /* KeyboardViewController.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		27AEB7852A5C2B4B008ED10F /* KeyboardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AEB77F2A5C2ADF008ED10F /* KeyboardButton.swift */; };
-		27AEB7862A5C2B78008ED10F /* Themes+Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AEB7812A5C2AFF008ED10F /* Themes+Colors.swift */; };
+		27AEB7862A5C2B78008ED10F /* ColorConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AEB7812A5C2AFF008ED10F /* ColorConfiguration.swift */; };
 		27AEB7872A5C2B8C008ED10F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AEB7832A5C2B1B008ED10F /* Extensions.swift */; };
 		27AEB7882A5C2D34008ED10F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27AEB7642A5C2A0D008ED10F /* Assets.xcassets */; };
 /* End PBXBuildFile section */
@@ -58,7 +58,7 @@
 		27AEB7752A5C2A3A008ED10F /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
 		27AEB7772A5C2A3A008ED10F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		27AEB77F2A5C2ADF008ED10F /* KeyboardButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardButton.swift; sourceTree = "<group>"; };
-		27AEB7812A5C2AFF008ED10F /* Themes+Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Themes+Colors.swift"; sourceTree = "<group>"; };
+		27AEB7812A5C2AFF008ED10F /* ColorConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorConfiguration.swift; sourceTree = "<group>"; };
 		27AEB7832A5C2B1B008ED10F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -117,7 +117,7 @@
 			children = (
 				27AEB7752A5C2A3A008ED10F /* KeyboardViewController.swift */,
 				27AEB77F2A5C2ADF008ED10F /* KeyboardButton.swift */,
-				27AEB7812A5C2AFF008ED10F /* Themes+Colors.swift */,
+				27AEB7812A5C2AFF008ED10F /* ColorConfiguration.swift */,
 				27AEB7832A5C2B1B008ED10F /* Extensions.swift */,
 				27AEB7772A5C2A3A008ED10F /* Info.plist */,
 			);
@@ -236,7 +236,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				27AEB7862A5C2B78008ED10F /* Themes+Colors.swift in Sources */,
+				27AEB7862A5C2B78008ED10F /* ColorConfiguration.swift in Sources */,
 				27AEB7852A5C2B4B008ED10F /* KeyboardButton.swift in Sources */,
 				27AEB7762A5C2A3A008ED10F /* KeyboardViewController.swift in Sources */,
 				27AEB7872A5C2B8C008ED10F /* Extensions.swift in Sources */,
