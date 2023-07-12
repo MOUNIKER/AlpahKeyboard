@@ -10,7 +10,6 @@ import UIKit
 class KeyboardViewController: UIInputViewController {
     
     var capButton: KeyboardButton!
-    var numericButton: KeyboardButton!
     var deleteButton: KeyboardButton!
     var nextKeyboardButton: KeyboardButton!
     var returnButton: KeyboardButton!
@@ -84,6 +83,7 @@ class KeyboardViewController: UIInputViewController {
         self.returnButton.highlightBackgroundColor = themeColor.buttonBackgroundColor
         self.spacekey.setTitleColor(themeColor.buttonTextColor, for: .normal)
         self.returnButton.setTitleColor(themeColor.buttonTextColor, for: .normal)
+        self.capButton.tintColor = themeColor.buttonTintColor
         
         for button in allTextButtons {
             button.tintColor = themeColor.buttonTintColor
@@ -125,7 +125,7 @@ class KeyboardViewController: UIInputViewController {
     }
     
     func serveiceKeys(midRow: UIView)->(UIStackView, UIStackView) {
-        self.capButton = accessoryButtons(title: nil, img: #imageLiteral(resourceName: "captial1"), tag: 1)
+        self.capButton = accessoryButtons(title: nil, img: UIImage(systemName: "shift"), tag: 1)
         self.deleteButton = accessoryButtons(title: nil, img: #imageLiteral(resourceName: "backspace"), tag: 2)
         
         let thirdRowSV = UIStackView(arrangedSubviews: [self.capButton,midRow,self.deleteButton])
@@ -249,13 +249,10 @@ class KeyboardViewController: UIInputViewController {
     @objc func handleCapitalsAndLowerCase(sender: UIButton) {
         for button in allTextButtons {
             if isCapitalsShowing == true{
-                
-                capButton.defaultBackgroundColor = UIColor.white
+                capButton.setImage(UIImage(systemName: "shift"), for: .normal)
             }
             else{
-                
-                capButton.defaultBackgroundColor = UIColor.lightGray
-                
+                capButton.setImage(UIImage(systemName: "shift.fill"), for: .normal)
             }
             
             if let title = button.currentTitle {
